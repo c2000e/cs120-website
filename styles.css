@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 10px;
+    font: 14px/1.5 monospace;
+}
+
+a:link, a:visited, a:active, a:hover {
+    color: #24a5d4;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+p {
+    padding-top: 20px;
+};
+
+header {
+    padding-bottom: 20px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+li {
+    margin-left: 2em;
+}
+
+img {
+    float: left;
+    width: 20%;
+    padding-right: 10px;
+}
+
+table img {
+    width: 70%;
+}
+
