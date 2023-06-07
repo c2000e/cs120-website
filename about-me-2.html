@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>About Me</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+        <link rel="stylesheet" href="styles-2.css">
+    </head>
+    <body>
+        <header>
+            <h1>About Me</h1>
+            <div id="icons">
+                <img src="facebook-icon.webp" alt="Facebook"></img>
+                <img src="twitter-icon.png" alt="Twitter"></img>
+            </div>
+        </header>
+        <article>
+            <h2>Christian Ermann</h2>
+
+            <p>
+                <strong>Why are you taking this course?</strong>
+                
+                I've been programming since I was 12 but with more of a focus
+                on computer graphics and embedded applications. Even during my
+                time here at Tufts, I've yet to take a course about web
+                technologies. I have made a personal website to write about
+                computer graphics and other things I find interesting, but that
+                is about the extent of my web experience. I'm hoping to fill in
+                some of the gaps in my C.S. knowledge with this course.
+            </p>
+
+            <p>
+                <strong>What are your 3 favorite foods?</strong>
+                <ul>
+                    <li>Russian Hamburgers</li>
+                    <li>Sushi</li>
+                    <li>Spam Musubis</li>
+                </ul>
+            </p>
+
+            <p>
+               <strong>Which one is your most favorite?</strong>
+               <div id="food-explanation">
+                   Growing up, my mom always made bierocks (we called them
+                   russian hamburgers). Ours only had beef and cabbage inside,
+                   and they were shaped like pyramids made out of crescent roll
+                   dough. We always put butter on the outside. I know a lot of
+                   people tend to put other ingredients, like peppers and
+                   onions, inside.
+               </div>
+            </p>
+
+            <p>
+                <strong>What is your favorite restaurant?</strong>
+
+                I really enjoy the pork belly mac and cheese at
+                <a href="https://www.grassapdx.com/">Grassa</a>
+                in Portland, Oregon. My friends and I ate there many times
+                while we were going to school at Lewis and Clark College.
+            </p>
+
+            <p>
+                <strong>What are some of your favorite books?</strong>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Cover</th>
+                        <th>Author</th>
+                        <th>Summary</th>
+                    </tr>
+                    <tr>
+                        <td>Ender's Game</td>
+                        <td><img src="enders-game.jpg" alt="Ender's Game Cover"></img></td>
+                        <td>Orson Scott Card</td>
+                        <td>
+                            Ender Wiggin is trained to be the commander of a
+                            space fleet to defend Earth from the Formics, but
+                            his education turns out to be more real than he
+                            anticipated.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ringworld</td>
+                        <td><img src="ringworld.jpg" alt="Ringworld Cover"></img></td>
+                        <td>Larry Niven</td>
+                        <td>
+                            Louis Wu sets off to explore a gigantic artificial
+                            ring with a small band of aliens, only to discover
+                            human history is much different than previously
+                            understood.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dune</td>
+                        <td><img src="dune.jpg" alt="Dune Cover"></img></td>
+                        <td>Frank Herbert</td>
+                        <td>
+                            Paul Atreides leads the indigineous population of
+                            the planet Arrakis in a rebellion against the
+                            Harkonnens, after the betrayal and assassination of
+                            his father by the Emperor.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Foundation</td>
+                        <td><img src="foundation.jpg" alt="Foundation Cover"></img></td>
+                        <td>Isaac Asimov</td>
+                        <td>
+                            Hari Seldon develops a statistical method for
+                            predicting the future of Human societies, leading
+                            him to discover that the galactic empire will soon
+                            fall, as well as providing the solution to bringing
+                            Humanity back from the coming dark ages.
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </article>
+        <form>
+            <div id="left">
+                <label for="fname">First name:</label>
+                <br>
+                <label for="lname">Last name:</label>
+                <br>
+                <label for="city">City:</label>
+                <br>
+                <label for="state">State:</label>
+                <br>
+                <br>
+                <input type="submit" value="Submit"></input>
+            </div>
+            <div id="right">
+                <input type="text" id="fname" name="fname"></input>
+                <input type="text" id="lname" name="lname"></input>
+                <input type="text" id="city" name="city"></input>
+                <select id="state" name="state">
+                    <option value="">Please choose a state</option>
+                    <option value="ma">Massachussetts</option>
+                    <option value="or">Oregon</option>
+                </select>
+            </div>
+        </form>
+    </body>
+</html>
