@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problem 5</title>
+    </head>
+    <body>
+        <p id='numbers'></p>
+        <script>
+            function displayTimesTable(num) {
+                for (let i = 1; i <= 12; i++) {
+                    let line = String(num) + " x " + String(i) + " = " + String(num * i);
+                    document.getElementById("numbers").innerHTML += line + "<br><br>";
+                }
+            }
+
+            let num = Number(prompt("Enter a number:", ""));
+            displayTimesTable(num);
+        </script>
+    </body>
+</html>

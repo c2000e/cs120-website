@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problem 1</title>
+    </head>
+    <body>
+        <script>
+            let fname = prompt("First name:", "");
+            let lname = prompt("Last name:", "");
+            alert("Your name is " + fname + " " + lname);
+
+            let numChildren = Number(prompt("How many children do you have?", ""));
+            switch(numChildren) {
+                case 0:
+                    alert("You have no children");
+                    break;
+                case 1:
+                    alert("You have 1 child");
+                    break;
+                default:
+                    alert("You have " + String(numChildren) + " children");
+            }
+        </script>
+    </body>
+</html>

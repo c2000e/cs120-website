@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problem 6</title>
+    </head>
+    <body>
+        <p id='numbers'></p>
+        <script>
+            function count(numbers, cutoff) {
+                let total = 0;
+                for (let i = 0; i < numbers.length; i++) {
+                    if (numbers[i] < cutoff) {
+                        total += 1;
+                    }
+                }
+                return total;
+            }
+
+            function displayCount(cutoff) {
+                let numbers = [3, 55, 30, 28, 9, 12];
+                let total = count(numbers, cutoff);
+                document.getElementById("numbers").innerHTML += String(numbers) + "<br><br>";
+                document.getElementById("numbers").innerHTML += "Numbers less than " + String(cutoff) + ": " + String(total);
+            }
+
+            let num = Number(prompt("Enter a number:", ""));
+            displayCount(num);
+        </script>
+    </body>
+</html>

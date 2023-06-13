@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problem 4</title>
+    </head>
+    <body>
+        <p id='numbers'></p>
+        <script>
+            let num1 = Number(prompt("Enter the lower bound of the range:", ""));
+            let num2 = Number(prompt("Enter the upper bound of the range:", ""));
+
+            let sum = 0;
+            for (let i = num1; i < num2; i++) {
+                if (i % 2 == 1) {
+                    document.getElementById("numbers").innerHTML += String(i) + "<br>";
+                }
+                sum += i;
+            }
+            document.getElementById("numbers").innerHTML += "Sum: " + String(sum);
+        </script>
+    </body>
+</html>

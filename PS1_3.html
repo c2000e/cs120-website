@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Problem 3</title>
+    </head>
+    <body>
+        <p id='numbers'></p>
+        <script>
+            let num1 = Number(prompt("Enter a number:", ""));
+            let num2 = Number(prompt("Enter another number:", ""));
+
+            if (num1 < num2) {
+                document.getElementById("numbers").innerHTML = String(num1) + " < " + String(num2);
+            }
+            else if (num2 < num1) {
+                document.getElementById("numbers").innerHTML = String(num2) + " < " + String(num1);
+            }
+            else {
+                document.getElementById("numbers").innerHTML = String(num2) + " = " + String(num1);
+            }
+        </script>
+    </body>
+</html>
