@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0">
+    <title>Squash Face - Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Squash Face</a></h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="form">
+        <h1>Book Us!</h1>
+        <form>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"></input>
+            </div>
+            <br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"></input>
+            </div>
+            <br>
+            <div>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city"></input>
+            </div>
+            <br>
+            <div>
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="">Please choose a state</option>
+                    <option value="or">Maine</option>
+                    <option value="ma">Massachussetts</option>
+                    <option value="or">Rhode Island</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="month">Month:</label>
+                <select id="state" name="state">
+                    <option value="">Please choose a month</option>
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                </select>
+            </div>
+            <br>
+            <input id="submit" type="submit" value="Submit"></input>
+        </form>
+    </div>
+    <style>
+        #form {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            text-align: center;
+            background-color: aliceblue;
+        }
+
+        #form h1 {
+            padding-top: 1em;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            text-align: left;
+            padding-bottom: 3em;
+        }
+
+        input:not(#submit),
+        select {
+            width: 50%;
+            float: right;
+            text-align: right;
+        }
+
+        #submit {
+            float: right;
+        }
+    </style>
+
+    <footer>
+        <div id="icons">
+            <a href="https://www.facebook.com">
+                <img class="icon" src="facebook-icon.webp" alt="Facebook"></img>
+            </a>
+            <a href="https://www.twitter.com">
+                <img class="icon" src="twitter-icon.png" alt="Twitter"></img>
+            </a>
+        </div>
+        <p id="copyright">&copy Squash Face 2023</p>
+    </footer>
+</body>
+
+</html>

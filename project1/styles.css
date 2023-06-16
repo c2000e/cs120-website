@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 900px;
+    margin: 1.5em auto;
+    font-size: 100%;
+}
+
+header {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+header>h1 {
+    font-family: 'Kablammo', cursive;
+    font-size: 2.0em;
+    padding-left: 1em;
+}
+
+header>nav {
+    padding-right: 1em;
+}
+
+header>nav>ul {
+    list-style-type: none;
+}
+
+header>nav>ul>li {
+    display: inline;
+    padding-left: 2.0em;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#flyer {
+    text-align: center;
+    margin-top: 1em;
+    height: 30em;
+    background-image: url("guys-on-a-bench-resized.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: #b8e0f5;
+}
+
+#flyer>h1 {
+    padding-top: 2.0em;
+    padding-left: 1.0em;
+    padding-right: 1.0em;
+}
+
+#flyer p {
+    margin-top: 8em;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.5em;
+    max-width: 600px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-style: outset;
+}
+
+#quote {
+    text-align: center;
+    height: 10em;
+    background: radial-gradient(#eb2a3d, #9198e5);
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#quote>h1 {
+    padding-top: 1.5em;
+    padding-left: 1.0em;
+    padding-right: 1.0em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9198e5;
+}
+
+#copyright {
+    padding-right: 1em;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+    color: black;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+    #flyer {
+        background-size: cover;
+    }
+}
+
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    header h1 {
+        padding-right: 1em;
+    }
+
+    header nav {
+        padding-top: 1em;
+    }
+
+    header>nav>ul>li:first-child {
+        padding-left: 0;
+    }
+
+    #flyer>h1,
+    #quote>h1 {
+        font-size: 1.8em;
+    }
+
+    #flyer>p,
+    #quote>h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 350px) {
+    header>nav>ul>li:not(:first-child) {
+        padding-left: 0.5em;
+    }
+
+    #flyer>h1,
+    #quote>h1 {
+        font-size: 1.5em;
+    }
+
+    #flyer>p {
+        font-size: 1.0em;
+        margin-top: 12.0em;
+    }
+
+    #quote>h2 {
+        font-size: 1.0em;
+    }
+}
