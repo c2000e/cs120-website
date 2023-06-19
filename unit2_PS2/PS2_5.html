@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 5</title>
+</head>
+
+<body>
+    <form>
+        <select id="item" name="item"></select>
+        <br>
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity"></input>
+        <br>
+        <button type="button" id="add">Add</button>
+    </form>
+
+    <div id="order"></div>
+
+    <script>
+        items = ["cats", "dogs", "turtles", "rabbits", "pigeons"];
+        prices = [5, 7, 3, 2, 4];
+
+        // Get all page elements
+        let selector = document.getElementById("item");
+        let textbox = document.getElementById("quantity");
+        let order = document.getElementById("order");
+
+        // Initialize selector options
+        items.map(x => {
+            let option = document.createElement("option");
+            option.text = x;
+            option.value = x;
+            selector.add(option);
+        });
+
+        let total_price = 0;
+
+        function add_to_order() {
+            let item = selector.options[selector.selectedIndex].value;
+
+            let quantity = Number(textbox.value);
+            if (quantity < 1 || quantity > 100) {
+                alert("Invalid order quantity. Must be between 1 and 100.");
+                return;
+            };
+
+            // Temporarily remove total
+            if (order.childElementCount > 1) {
+                order.removeChild(order.lastElementChild);
+            }
+
+            // Add item entry
+            let price = quantity * prices[selector.selectedIndex];
+            let entry = String(quantity) + " " + item + " - $" + String(price);
+            order.innerHTML += "<p>" + entry + "</p>";
+
+            // Calculate and display order total
+            total_price += price;
+            let total_entry = "total - $" + String(total_price);
+
+            let entry_paragraph = document.createElement("p");
+            let entry_node = document.createTextNode(total_entry);
+            entry_paragraph.appendChild(entry_node);
+
+            document.getElementById("order").appendChild(entry_paragraph);
+        }
+
+        // Add event listener to button
+        let btn = document.getElementById("add");
+        btn.addEventListener("click", (e) => {
+            add_to_order();
+        });
+    </script>
+</body>
+
+</html>

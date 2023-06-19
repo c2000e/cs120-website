@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 6</title>
+</head>
+
+<body>
+    <form>
+        <select id="item" name="item"></select>
+        <br>
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity"></input>
+        <br>
+        <button type="button" id="add">Add</button>
+    </form>
+
+    <div id="order"></div>
+
+    <script>
+        // Get all page elements
+        let selector = document.getElementById("item");
+        let textbox = document.getElementById("quantity");
+        let order = document.getElementById("order");
+
+        // Create OrderEntry object for tracking items in cart
+        function OrderEntry(item, price, quantity) {
+            this.item = item;
+            this.price = price
+            this.quantity = quantity;
+        }
+
+        OrderEntry.prototype.display = function () {
+            let price = this.quantity * this.price;
+
+            if (this.quantity > 0) {
+                let entry = String(this.quantity) + " " + this.item + " - $" + price;
+
+                // Create entry paragraph element
+                let entry_paragraph = document.createElement("p");
+                let entry_node = document.createTextNode(entry);
+                entry_paragraph.appendChild(entry_node);
+
+                // Add entry into order div
+                document.getElementById("order").appendChild(entry_paragraph);
+            }
+
+            return price;
+        }
+
+        // Initialize cart to be empty
+        let cart = [
+            new OrderEntry("cats", 5, 0),
+            new OrderEntry("dogs", 7, 0),
+            new OrderEntry("turtles", 3, 0),
+            new OrderEntry("rabbits", 2, 0),
+            new OrderEntry("pigeons", 4, 0),
+        ];
+
+        // Initialize selector options
+        cart.map(x => {
+            let option = document.createElement("option");
+            option.text = x.item;
+            option.value = x.item;
+            selector.add(option);
+        });
+
+        function add_to_order() {
+            let item = selector.options[selector.selectedIndex].value;
+
+            let quantity = Number(textbox.value);
+            if (quantity < 1 || quantity > 100) {
+                alert("Invalid order quantity. Must be between 1 and 100.");
+                return;
+            };
+
+            let cart_entry = cart.find(x => x.item === item);
+            cart_entry.quantity += quantity;
+
+            // Clear order information
+            order.innerHTML = "";
+
+            // Display cart elements and get prices
+            let prices = cart.map(x => x.display());
+
+            // Calculate and display order total
+            let total_price = prices.reduce((partial_sum, initial) => partial_sum + initial, 0);
+            let total_entry = "total - $" + String(total_price);
+
+            let entry_paragraph = document.createElement("p");
+            let entry_node = document.createTextNode(total_entry);
+            entry_paragraph.appendChild(entry_node);
+
+            document.getElementById("order").appendChild(entry_paragraph);
+        }
+
+        // Add event listener to button
+        let btn = document.getElementById("add");
+        btn.addEventListener("click", (e) => {
+            add_to_order();
+        });
+    </script>
+</body>
+
+</html>

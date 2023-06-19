@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 2</title>
+</head>
+
+<body>
+    <script>
+        let names_string = "Pat, Chris, Marlon, Ferncroft, Assunta"
+        let names = names_string.split(", ");
+        let names_list = "<ol>" + names.map(x => "<li>" + x + "</li>").join("") + "</ol>";
+        document.body.innerHTML += names_list;
+    </script>
+</body>
+
+</html>
