@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body></body>
+
+<script>
+    songs_json = {
+        "songs": [
+            {
+                "title": "Love",
+                "artist": "Kendrick Lamar",
+                "genre": [
+                    "R&B"
+                ],
+                "year": 2017
+            },
+            {
+                "title": "Wildest Dreams",
+                "artist": "Taylor Swift",
+                "genre": [
+                    "Pop"
+                ],
+                "year": 2014
+            },
+            {
+                "title": "Brandy",
+                "artist": "Looking Glass",
+                "genre": [
+                    "Pop",
+                    "Rock"
+                ],
+                "year": 1972
+            },
+            {
+                "title": "Livin' On A Prayer",
+                "artist": "Bon Jovi",
+                "genre": [
+                    "Rock"
+                ],
+                "year": 1986
+            },
+            {
+                "title": "Be My Own Boyfriend",
+                "artist": "Olivia Dean",
+                "genre": [
+                    "Pop"
+                ],
+                "year": 2021
+            },
+            {
+                "title": "Good 4 U",
+                "artist": "Olivia Rodrigo",
+                "genre": [
+                    "Pop"
+                ],
+                "year": 2021
+            },
+            {
+                "title": "Ivy",
+                "artist": "Frank Ocean",
+                "genre": [
+                    "R&B"
+                ],
+                "year": 2016
+            },
+            {
+                "title": "Pressure",
+                "artist": "Ari Lennox",
+                "genre": [
+                    "R&B"
+                ],
+                "year": 2022
+            },
+            {
+                "title": "Baby Doll",
+                "artist": "Dominic Fike",
+                "genre": [
+                    "Alternative"
+                ],
+                "year": 2018
+            },
+            {
+                "title": "Short Skirt/Long Jacket",
+                "artist": "Cake",
+                "genre": [
+                    "Alternative",
+                    "Rock"
+                ],
+                "year": 2001
+            }
+        ]
+    }
+    document.body.innerHTML = JSON.stringify(songs_json)
+</script>
+
+</html>

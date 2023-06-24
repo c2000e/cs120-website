@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <form>
+        <select id="genre" name="genre"></select>
+        <br>
+        <button type="button" id="filter">Filter</button>
+    </form>
+    <div id="songs"></div>
+</body>
+
+<script>
+    $.get("songs.json", { data: "value" }, function (json) {
+
+        songs = json["songs"];
+
+        // Get list of genres without duplicates
+        let genres = [];
+        songs.forEach(song => {
+            genres = genres.concat(song['genre']);
+        });
+        genres = [... new Set(genres)];
+
+        $.each(genres, function (i, genre) {
+            $("#genre").append($('<option>', {
+                value: genre,
+                text: genre
+            }));
+        });
+
+        $("#filter").on("click", function () {
+            console.log($("#genre").val())
+            let selected_genre = $("#genre").val();
+            $("#songs").empty()
+            $.each(songs, function (i, song) {
+                if (song['genre'].includes(selected_genre)) {
+                    $("#songs").append($('<p>', {
+                        text: song['title']
+                    }));
+                }
+            });
+        });
+    }, "json");
+
+</script>
+
+</html>

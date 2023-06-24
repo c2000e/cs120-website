@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+
+<body></body>
+
+<script>
+    $.get("songs.json", { data: "value" }, function (json) {
+        json["songs"].forEach(song => {
+            document.body.innerHTML += song["title"] + "<br>";
+            document.body.innerHTML += "Artist: " + song['artist'] + "<br>";
+            document.body.innerHTML += "Genre: " + song['genre'] + "<br>";
+            document.body.innerHTML += "Released " + song['year'] + "<br><br>";
+        });
+    }, "json");
+
+</script>
+
+</html>
