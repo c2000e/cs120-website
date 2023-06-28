@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Problem 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            headers: {
+                Accept: "application/json"
+            },
+            type: "GET",
+            url: "https://uselessfacts.jsph.pl/api/v2/facts/today?language=en",
+            success: function (json) {
+                console.log("AJAX")
+                console.log(JSON.stringify(json));
+                console.log(json["text"]);
+                $("#response1").append("<h2>Fact of the Day</h2>")
+                $("#response1").append("<a href=" + json["source_url"] + ">Fact Source</a>");
+                $("#response1").append("<p>" + json["text"] + "</p>");
+            }
+        });
+    </script>
+    <script>
+        async function getFact() {
+            const url = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en"
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+            return response.json();
+        }
+        getFact().then((json) => {
+            console.log("fetch()");
+            console.log(JSON.stringify(json));
+            $("#response2").append("<h2>Random Fact</h2>");
+            $("#response2").append("<a href=" + json["source_url"] + ">Fact Source</a>");
+            $("#response2").append("<p>" + json["text"] + "</p>");
+        });
+    </script>
+    <style>
+        h2 {
+            padding-top: 1em;
+        }
+
+        p {
+            padding-top: 0em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Unit 2 - Problem Set 4</h1>
+    </header>
+    <div id="response1"></div>
+    <div id="response2"></div>
+    <div>
+        <h2>Assignment Info</h2>
+        <p>
+            I selected the <a href="https://uselessfacts.jsph.pl/">Useless Facts</a> API. I found a
+            link to it on <a href="https://github.com/public-apis/public-apis">a list of public APIs</a>
+            maintained on GitHub. For this API, you can choose between the 'today' and 'random'
+            endpoints which return a daily fact and a random fact, respectively. Additionally, you
+            can choose to receive the facts in English or in German by setting the 'language' query
+            option to 'en' or 'de'. This API could be used to make a trivia club's website or an
+            encyclopedia's website more interesting and fun to use.
+        </p>
+    </div>
+</body>
+
+</html>
