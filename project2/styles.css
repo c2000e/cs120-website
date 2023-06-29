@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 650px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    height: 425px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#board>.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 20%;
+    margin: 0.5em 0;
+}
+
+#board>.row>p {
+    width: 20%;
+    height: 100%;
+    border-style: solid;
+    margin: 0 0.1em;
+    font-size: 2em;
+}
+
+form {
+    margin-top: 1em;
+}
+
+form>input {
+    margin-bottom: 1em;
+}
